@@ -1,0 +1,58 @@
+{
+  "name": "s3-helpers",
+  "version": "1.0.0",
+  "description": "not ready for public use",
+  "main": "lib/index.min.js",
+  "scripts": {
+    "build": "npm run build:dev && npm run build:prod",
+    "build:dev": "NODE_ENV=development babel src/index.js --source-maps --out-file lib/index.js",
+    "build:prod": "NODE_ENV=production babel src/index.js --out-file lib/index.min.js"
+  },
+  "keywords": [
+    "aws",
+    "s3",
+    "object storage"
+  ],
+  "author": {
+    "name": "Sarkis Arutiunian (sarkis.tlt@gmail.com)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sarkistlt/s3-adapter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sarkistlt/s3-adapter/issues"
+  },
+  "homepage": "https://github.com/sarkistlt/s3-adapter#readme",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^20.0.3",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-remove-comments": "^2.0.0",
+    "babel-plugin-transform-flow-comments": "^6.22.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^4.5.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-flowtype": "^2.35.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.3.0",
+    "flow-babel-webpack-plugin": "^1.1.0",
+    "flow-bin": "^0.53.1"
+  },
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "node"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.308.0",
+    "s3-upload-stream": "^1.0.7"
+  }
+}
