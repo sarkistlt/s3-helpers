@@ -1,12 +1,13 @@
 {
   "name": "s3-helpers",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "not ready for public use",
   "main": "lib/index.min.js",
   "scripts": {
     "build": "npm run build:dev && npm run build:prod",
     "build:dev": "NODE_ENV=development babel src/index.js --source-maps --out-file lib/index.js",
-    "build:prod": "NODE_ENV=production babel src/index.js --out-file lib/index.min.js"
+    "build:prod": "NODE_ENV=production babel src/index.js --out-file lib/index.min.js",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "aws",

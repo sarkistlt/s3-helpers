@@ -16,7 +16,7 @@ export default class ObjectStorageAdapter {
     }
   }
 
-  async getWriteStream({ container, filename, metaData = {}, rawMeta = {} }) {
+  async getWriteStream({ container, filename, folder = '', metaData = {}, rawMeta = {} }) {
     const s3 = new AWS.S3(this.authentication);
     const newFilename = this.filenameTransformer(filename);
     const extension = filename.split('.').pop();
@@ -36,7 +36,7 @@ export default class ObjectStorageAdapter {
 
     const writeStream = s3Stream(s3).upload({
       Bucket: container || this.params.defaultContainer,
-      Key: newFilename,
+      Key: `${folder}${newFilename}`,
       Metadata: metadata,
       ...this.s3Params,
     });
